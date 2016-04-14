@@ -55,7 +55,6 @@
 			<div class="block">
 				<div class="content">
 					
-					<hr>
 							
 							<table>
 							<tr>
@@ -76,16 +75,16 @@
 					
 					
 					<?php
-						$compositionsquery1 = "SELECT contract.id, client.last_name, client.first_name, client.second_name, contract.admin_id, contract.user_id, contract.date_start, contract.date_end, uniqueitem.ID, uniqueitem.color, groupdescription.type, groupdescription.made_by, groupdescription.material, groupdescription.other_info, category.season FROM contract JOIN CLIENT ON contract.client_id = CLIENT.id JOIN uniqueitem ON contract.ui_id = uniqueitem.id JOIN groupdescription ON uniqueitem.gd_id = groupdescription.ID JOIN cgd ON groupdescription.ID = cgd.gd_category_id JOIN category ON cgd.gd_category_id = cgd.category_gd_id WHERE category.season = 'winter' ORDER BY contract.id ASC";
+						$compositionsquery1 = "SELECT contract.id, CLIENT.last_name, CLIENT.first_name, CLIENT.second_name, contract.admin_id, contract.user_id, contract.date_start, contract.date_end, uniqueitem.ID, uniqueitem.color, groupdescription.type, groupdescription.made_by, groupdescription.material, groupdescription.other_info, category.season FROM category JOIN cgd ON category.id = cgd.category_gd_id JOIN groupdescription ON cgd.gd_category_id = groupdescription.ID JOIN uniqueitem ON groupdescription.ID = uniqueitem.gd_id JOIN contract ON uniqueitem.id = contract.ui_id JOIN CLIENT ON contract.client_id = CLIENT.id WHERE category.season = 'winter' ORDER BY contract.id ASC ";
 						$compositions1 = mysqli_query($connection, $compositionsquery1);
 						$rows1 = mysqli_num_rows($compositions1);
 						if($rows1==0)
 						{
-							echo "<h3 class='panel-title text-center'>No Winter Contracts Found</h3>";
+							echo "<h3 class='panel-title text-center'>No Winter Contracts Found</h3><br>";
 						}
 						else
 						{
-							echo "<h3 class='panel-title text-center'>Winter</h3>";
+							echo "<h3 class='panel-title text-center'>Winter</h3><br>";
 						}
 							
 						while($row1 = mysqli_fetch_assoc($compositions1)) 
@@ -116,6 +115,7 @@
 					
 					
 					
+					<hr>
 					
 					
 					<table>
@@ -137,16 +137,16 @@
 					
 					
 					<?php
-						$compositionsquery2 = "SELECT contract.id, client.last_name, client.first_name, client.second_name, contract.admin_id, contract.user_id, contract.date_start, contract.date_end, uniqueitem.ID, uniqueitem.color, groupdescription.type, groupdescription.made_by, groupdescription.material, groupdescription.other_info, category.season FROM contract JOIN CLIENT ON contract.client_id = CLIENT.id JOIN uniqueitem ON contract.ui_id = uniqueitem.id JOIN groupdescription ON uniqueitem.gd_id = groupdescription.ID JOIN cgd ON groupdescription.ID = cgd.gd_category_id JOIN category ON cgd.gd_category_id = cgd.category_gd_id WHERE category.season = 'spring' ORDER BY contract.id ASC";
+						$compositionsquery2 = "SELECT contract.id, CLIENT.last_name, CLIENT.first_name, CLIENT.second_name, contract.admin_id, contract.user_id, contract.date_start, contract.date_end, uniqueitem.ID, uniqueitem.color, groupdescription.type, groupdescription.made_by, groupdescription.material, groupdescription.other_info, category.season FROM category JOIN cgd ON category.id = cgd.category_gd_id JOIN groupdescription ON cgd.gd_category_id = groupdescription.ID JOIN uniqueitem ON groupdescription.ID = uniqueitem.gd_id JOIN contract ON uniqueitem.id = contract.ui_id JOIN CLIENT ON contract.client_id = CLIENT.id WHERE category.season = 'spring' ORDER BY contract.id ASC";
 						$compositions2 = mysqli_query($connection, $compositionsquery2);
 						$rows2 = mysqli_num_rows($compositions2);
 						if($rows2==0)
 						{
-							echo "<h3 class='panel-title text-center'>No Spring Contracts Found</h3>";
+							echo "<br><br><h3 class='panel-title text-center'>No Spring Contracts Found</h3><br>";
 						}
 						else
 						{
-							echo "<h3 class='panel-title text-center'>Spring</h3>";
+							echo "<br><br><h3 class='panel-title text-center'>Spring</h3><br>";
 						}
 							
 						while($row2 = mysqli_fetch_assoc($compositions2)) 
@@ -178,6 +178,7 @@
 					
 					
 					
+					<hr>
 					
 					
 					
@@ -200,16 +201,16 @@
 					
 					
 					<?php
-						$compositionsquery3 = "SELECT contract.id, client.last_name, client.first_name, client.second_name, contract.admin_id, contract.user_id, contract.date_start, contract.date_end, uniqueitem.ID, uniqueitem.color, groupdescription.type, groupdescription.made_by, groupdescription.material, groupdescription.other_info, category.season FROM contract JOIN CLIENT ON contract.client_id = CLIENT.id JOIN uniqueitem ON contract.ui_id = uniqueitem.id JOIN groupdescription ON uniqueitem.gd_id = groupdescription.ID JOIN cgd ON groupdescription.ID = cgd.gd_category_id JOIN category ON cgd.gd_category_id = cgd.category_gd_id WHERE category.season = 'summer' ORDER BY contract.id ASC";
+						$compositionsquery3 = "SELECT contract.id, CLIENT.last_name, CLIENT.first_name, CLIENT.second_name, contract.admin_id, contract.user_id, contract.date_start, contract.date_end, uniqueitem.ID, uniqueitem.color, groupdescription.type, groupdescription.made_by, groupdescription.material, groupdescription.other_info, category.season FROM category JOIN cgd ON category.id = cgd.category_gd_id JOIN groupdescription ON cgd.gd_category_id = groupdescription.ID JOIN uniqueitem ON groupdescription.ID = uniqueitem.gd_id JOIN contract ON uniqueitem.id = contract.ui_id JOIN CLIENT ON contract.client_id = CLIENT.id WHERE category.season = 'summer' ORDER BY contract.id ASC ";
 						$compositions3 = mysqli_query($connection, $compositionsquery3);
 						$rows3 = mysqli_num_rows($compositions3);
 						if($rows3==0)
 						{
-							echo "<h3 class='panel-title text-center'>No Summer Contracts Found</h3>";
+							echo "<br><br><h3 class='panel-title text-center'>No Summer Contracts Found</h3><br>";
 						}
 						else
 						{
-							echo "<h3 class='panel-title text-center'>Summer</h3>";
+							echo "<br><br><h3 class='panel-title text-center'>Summer</h3><br>";
 						}
 							
 						while($row3 = mysqli_fetch_assoc($compositions3)) 
@@ -240,6 +241,7 @@
 					
 					
 					
+					<hr>
 					
 					
 					
@@ -262,16 +264,16 @@
 					
 					
 					<?php
-						$compositionsquery4 = "SELECT contract.id, client.last_name, client.first_name, client.second_name, contract.admin_id, contract.user_id, contract.date_start, contract.date_end, uniqueitem.ID, uniqueitem.color, groupdescription.type, groupdescription.made_by, groupdescription.material, groupdescription.other_info, category.season FROM contract JOIN CLIENT ON contract.client_id = CLIENT.id JOIN uniqueitem ON contract.ui_id = uniqueitem.id JOIN groupdescription ON uniqueitem.gd_id = groupdescription.ID JOIN cgd ON groupdescription.ID = cgd.gd_category_id JOIN category ON cgd.gd_category_id = cgd.category_gd_id WHERE category.season = 'autumn' ORDER BY contract.id ASC";
+						$compositionsquery4 = "SELECT contract.id, CLIENT.last_name, CLIENT.first_name, CLIENT.second_name, contract.admin_id, contract.user_id, contract.date_start, contract.date_end, uniqueitem.ID, uniqueitem.color, groupdescription.type, groupdescription.made_by, groupdescription.material, groupdescription.other_info, category.season FROM category JOIN cgd ON category.id = cgd.category_gd_id JOIN groupdescription ON cgd.gd_category_id = groupdescription.ID JOIN uniqueitem ON groupdescription.ID = uniqueitem.gd_id JOIN contract ON uniqueitem.id = contract.ui_id JOIN CLIENT ON contract.client_id = CLIENT.id WHERE category.season = 'autumn' ORDER BY contract.id ASC";
 						$compositions4 = mysqli_query($connection, $compositionsquery4);
 						$rows4 = mysqli_num_rows($compositions4);
 						if($rows4==0)
 						{
-							echo "<h3 class='panel-title text-center'>No Autumn Contracts Found</h3>";
+							echo "<br><br><h3 class='panel-title text-center'>No Autumn Contracts Found</h3><br>";
 						}
 						else
 						{
-							echo "<h3 class='panel-title text-center'>Autumn</h3>";
+							echo "<br><br><h3 class='panel-title text-center'>Autumn</h3><br>";
 						}
 							
 						while($row4 = mysqli_fetch_assoc($compositions4)) 

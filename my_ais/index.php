@@ -58,7 +58,6 @@
 			<div class="block">
 				<div class="content">
 					
-					<hr>
 							
 							<table>
 							<tr>
@@ -84,11 +83,11 @@
 						$rows = mysqli_num_rows($compositions);
 						if($rows==0)
 						{
-							echo "<h3 class='panel-title text-center'>No Contracts Found</h3>";
+							echo "<h3 class='panel-title text-center'>No Contracts Found</h3><br>";
 						}
 						else
 						{
-							echo "<h3 class='panel-title text-center'>Contracts</h3>";
+							echo "<h3 class='panel-title text-center'>Contracts</h3><br>";
 						}
 							
 						while($row = mysqli_fetch_assoc($compositions)) 

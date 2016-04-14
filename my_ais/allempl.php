@@ -54,7 +54,6 @@
 			<div class="block">
 				<div class="content">
 					
-					<hr>
 							
 							<table>
 							<tr>
@@ -64,7 +63,15 @@
 							<th>Second Name</th>
 							<th>Login</th>
 							<th>Role</th>
-							<th></th>
+							
+							<?php
+		if($_SESSION['role'] == 'admin')
+			{
+				echo "<th></th>";
+			}
+			?>
+							
+							
 							</tr>
 							
 					
@@ -75,11 +82,11 @@
 						$rows = mysqli_num_rows($compositions);
 						if($rows==0)
 						{
-							echo "<h3 class='panel-title text-center'>No Employees Found</h3>";
+							echo "<h3 class='panel-title text-center'>No Employees Found</h3><br>";
 						}
 						else
 						{
-							echo "<h3 class='panel-title text-center'>Employees</h3>";
+							echo "<h3 class='panel-title text-center'>Employees</h3><br>";
 						}
 							
 						while($row = mysqli_fetch_assoc($compositions)) 
@@ -96,8 +103,13 @@
 
 	?>
 							
+									<?php
+		if($_SESSION['role'] == 'admin')
+			{
+				echo '<td align="left"><a href="deleteempl.php?id='.$row['id'].'">Delete</a></td>';
+			}
+			?>
 									
-									<td align="left"><a href="deleteempl.php?id=<?php echo $row["id"]; ?>">Delete</a></td>
 								</tr>
 							
 							<?php 

@@ -53,9 +53,7 @@
 		<div id="allclients">
 			<div class="block">
 				<div class="content">
-					
-					<hr>
-							
+								
 							<table>
 							<tr>
 							<th>ID</th>
@@ -67,7 +65,16 @@
 							<th>Street</th>
 							<th>Contact Number</th>
 							<th></th>
-							<th></th>
+							
+							
+									<?php
+		if($_SESSION['role'] == 'admin')
+			{
+				echo '<th></th>';
+			}
+			?>
+							
+							
 							</tr>
 							
 					
@@ -78,11 +85,11 @@
 						$rows = mysqli_num_rows($compositions);
 						if($rows==0)
 						{
-							echo "<h3 class='panel-title text-center'>No Clients Found</h3>";
+							echo "<h3 class='panel-title text-center'>No Clients Found</h3><br>";
 						}
 						else
 						{
-							echo "<h3 class='panel-title text-center'>Clients</h3>";
+							echo "<h3 class='panel-title text-center'>Clients</h3><br>";
 						}
 							
 						while($row = mysqli_fetch_assoc($compositions)) 
@@ -103,8 +110,17 @@
 							
 							
 							
-									<td align="left"><a href="editclient.php?id=<?php echo $row["id"]; ?>">Edit</a></td>
-									<td align="left"><a href="deleteclient.php?id=<?php echo $row["id"]; ?>">Delete</a></td>
+									<td align="left"><a href="editclient.php?id=<?php echo $row['id']; ?>">Edit</a></td>
+									
+									
+									<?php
+		if($_SESSION['role'] == 'admin')
+			{
+				echo '<td align="left"><a href="deleteclient.php?id='.$row['id'].'">Delete</a></td>';
+			}
+			?>
+									
+									
 								</tr>
 							
 							<?php 

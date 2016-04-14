@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2016 at 05:11 AM
+-- Generation Time: Apr 14, 2016 at 10:13 AM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -68,6 +68,7 @@ INSERT INTO `cgd` (`category_gd_id`, `gd_category_id`) VALUES
 (3, 3),
 (3, 4),
 (3, 5),
+(3, 6),
 (4, 1),
 (4, 2),
 (4, 3),
@@ -125,11 +126,13 @@ INSERT INTO `contract` (`ID`, `ui_id`, `client_id`, `admin_id`, `user_id`, `date
 (3, 10, 3, 1, 2, '2016-03-06', '2016-04-20'),
 (4, 2, 3, 1, 2, '2015-04-03', '2015-04-27'),
 (5, 3, 1, 1, 2, '2016-02-07', '2016-03-07'),
+(12, 11, 3, 1, 2, '2015-04-12', '2015-04-13'),
 (13, 5, 1, 1, 2, '2016-03-03', '2016-04-13'),
 (14, 6, 2, 1, 2, '2016-01-01', '2016-04-08'),
 (15, 7, 3, 1, 2, '2016-02-06', '2016-03-20'),
 (16, 8, 3, 1, 2, '2015-05-03', '2015-05-27'),
-(17, 9, 1, 1, 2, '2015-02-07', '2015-03-07');
+(17, 9, 1, 1, 2, '2015-02-07', '2015-03-07'),
+(18, 11, 1, 1, 2, '2016-04-12', '2016-04-13');
 
 -- --------------------------------------------------------
 
@@ -178,7 +181,8 @@ INSERT INTO `groupdescription` (`ID`, `type`, `made_by`, `material`, `other_info
 (2, 'Spalnyk', 'Terra Incognita', NULL, NULL),
 (3, 'Naplechnyk', 'Deuter', NULL, 'Volume = 35l'),
 (4, 'Naplechnyk', 'Tatonka', NULL, 'Volume = 50l'),
-(5, 'Tent', 'Tatonka', 'Cotton', NULL);
+(5, 'Tent', 'Tatonka', 'Cotton', NULL),
+(6, 'Naplechnyk', 'Deuter', NULL, 'Volume = 25l');
 
 -- --------------------------------------------------------
 
@@ -206,7 +210,8 @@ INSERT INTO `uniqueitem` (`ID`, `color`, `gd_id`) VALUES
 (7, 'blue', 4),
 (8, 'black', 4),
 (9, NULL, 5),
-(10, 'white', 5);
+(10, 'white', 5),
+(11, NULL, 6);
 
 --
 -- Indexes for dumped tables
@@ -271,17 +276,17 @@ ALTER TABLE `uniqueitem`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `ID` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `contract`
 --
 ALTER TABLE `contract`
-  MODIFY `ID` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `ID` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
