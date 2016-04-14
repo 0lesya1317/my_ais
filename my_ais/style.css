@@ -1,0 +1,169 @@
+#container1 {
+    background-color: #e2dada;
+}
+
+table {
+	
+}
+
+.centered-form {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.centered-form .panel {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+
+.success {
+	top: 50%;
+	left: 50%;
+	width: 450px;
+	height: 450px;
+	position: absolute;
+	margin-top: -250px;
+	margin-left: -225px;
+	text-align: center;
+}
+
+.bigicon {    
+    color:white;
+}
+
+.mix{
+    min-height:50px;
+}
+
+ul.dropdown-cart{
+    min-width:250px;
+    border: 2px solid #343434;
+    padding: 2px;
+    margin: 7px;
+    margin-top: 11px;
+}
+ul.dropdown-cart li .item{
+    display:block;
+    padding:3px 10px;
+    margin: 3px 0;
+    
+}
+ul.dropdown-cart li .item:hover{
+    background-color:#c3c5c5;
+    
+}
+ul.dropdown-cart li .item:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+ul.dropdown-cart li .item-left{
+    float:left;
+}
+ul.dropdown-cart li .item-left img,
+ul.dropdown-cart li .item-left span.item-info{
+    float:left;
+}
+ul.dropdown-cart li .item-left span.item-info{
+    margin-left:10px;   
+}
+ul.dropdown-cart li .item-left span.item-info span{
+    display:block;
+}
+ul.dropdown-cart li .item-right{
+    float:right;
+}
+ul.dropdown-cart li .item-right button{
+    margin-top:14px;
+}   
+
+#create {
+    background-color: #FFFFFF;
+    opacity: 0.7;
+    display: block;
+    border-radius: 20px;
+    text-align: center;
+    vertical-align:middle;
+    width: 350px;
+    height: 300px;
+    position: absolute;
+    top: -30%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+#myimage{
+    text-align: center;
+    display: block;
+	position: absolute;
+    top: 20%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+#allclients{
+    text-align: center;
+    display: block;
+    top: 60%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.main{
+    text-align: center;
+    display: block;
+	position: absolute;
+    top: 25%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.block{
+    display: block;
+}
+
+.content{
+    max-width: 1300px;
+    margin: 20px auto;
+    background-color: rgba(255,255,255,0.9);
+    text-align: center;
+    border-radius: 10px;
+	padding: 40px 40px 40px 40px;
+}
+
+.pad{
+	padding:5px 5px 5px 5px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	font-size: 100px;
+	text-align: right;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	outline: none;
+	background: white;
+	cursor: inherit;
+	display: block;
+}
